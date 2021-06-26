@@ -15,7 +15,8 @@
       <input 
         id="title"
         type="title"
-        v-model.lazy="eventData.title"
+        :value="eventData.title"
+        @input="eventData.title = $event.target.value"
       >
       <p>{{ eventData.title }}</p>
 
