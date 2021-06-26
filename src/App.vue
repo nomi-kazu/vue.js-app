@@ -34,6 +34,15 @@
         v-model.trim="eventData.host"
       >
       <p>{{ eventData.host }}</p>
+
+      <label for="detail">イベントの内容</label>
+      <textarea
+        id="detail"
+        cols="30"
+        rows="10"
+        v-model="eventData.detail"
+      ></textarea>
+      <p>{{ eventData.detail }}</p>
     </div>
   </div>
 </template>
@@ -50,8 +59,10 @@ export default {
       number: 10,
       currentComponent: 'Home',
       eventData: {
-        title: "タイトル",
-        maxNumber: 0
+        title: "",
+        maxNumber: 0,
+        host: '',
+        detail: ''
       }
     }
   },
