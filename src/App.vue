@@ -1,12 +1,15 @@
 <template>
   <div class="main">
     <button @click="show = !show">切り替え</button>
-    <transition name="fade">
-      <p v-if="show">hello</p>
+    <transition
+      name="fade"
+      appear
+    ><p v-if="show">hello</p>
     </transition>
     <transition 
       name="slide" 
       type="animation"
+      appear
     ><p v-show="show">bye</p>
     </transition>
   </div>
