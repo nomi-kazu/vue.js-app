@@ -41,6 +41,8 @@ export default {
         .then(response => {
           console.log(response);
         });
+        this.email = "";
+        this.password = "";
     }
   }
 };
