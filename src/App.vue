@@ -29,6 +29,18 @@ export default {
       comment: ""
     };
   },
+  created() {
+    axios
+      .get(
+        'https://firestore.googleapis.com/v1/projects/vuejs-http-18662/databases/(default)/documents/comments'
+      )
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
   methods: {
     createComment() {
       axios
