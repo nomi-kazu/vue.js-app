@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -28,7 +30,18 @@ export default {
     };
   },
   methods: {
-    register() {}
+    register() {
+      axios.post(
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAeT1blzEwYyoamW6dC-N4XO08PKlYb6yo",
+        {
+          email: this.email,
+          password: this.password,
+          returnSecureToken: true
+        })
+        .then(response => {
+          console.log(response);
+        });
+    }
   }
 };
 </script>
